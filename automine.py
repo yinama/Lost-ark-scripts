@@ -2,7 +2,7 @@ import time
 import pyautogui
 import os
 
-time.sleep(2)
+#Time.sleep(2)
 Orecolor = (109, 191, 1)
 Treecolor = (116, 203, 1)
 
@@ -30,11 +30,13 @@ Treecolor = (116, 203, 1)
 #                 time.sleep(4)
 #                 return
 
+options = ['1-auto press g','2-auto mine', '3-auto log']
 
 #just press g
 def autoPressG():
-    pyautogui.press('g')
-    time.sleep(0.5)
+    while True:
+        pyautogui.press('g')
+        time.sleep(0.5)
 
 #new method with locateOnScreen
 def getOreLocation():
@@ -81,7 +83,15 @@ def getPosition():
         
 # getPosition()
 
-while True:
+choice = input(options)
+time.sleep(2)
+match (choice):
+    case 1 :
+        autoPressG()
+    case 2 :
+        getOreLocation()
+    case 3 :
+        getTreeLocation()
     #getTreeLocation()
-    autoPressG()
+    #autoPressG()
     #print(pyautogui.position())
