@@ -6,8 +6,8 @@ import pytesseract
 import pyautogui
 import os
 
-imgWidth=1920
-imgHeight=1920 #1088
+imgHeight=1920
+imgWidth=1088 #1088
 net = cv2.dnn.readNet("frozen_east_text_detection.pb")
 print('here')
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
