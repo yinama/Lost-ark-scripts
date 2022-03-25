@@ -5,6 +5,9 @@ import os
 time.sleep(2)
 Orecolor = (109, 191, 1)
 Treecolor = (116, 203, 1)
+
+#topleft(753, 434)
+
 # ore_pos = pyautogui.locateOnScreen("test.png")
 # posXY = pyautogui.position() 
 # print(posXY, pyautogui.pixel(posXY[0], posXY[1]) )
@@ -27,6 +30,11 @@ Treecolor = (116, 203, 1)
 #                 time.sleep(4)
 #                 return
 
+
+#just press g
+def autoPressG():
+    pyautogui.press('g')
+    time.sleep(0.5)
 
 #new method with locateOnScreen
 def getOreLocation():
@@ -74,6 +82,6 @@ def getPosition():
 # getPosition()
 
 while True:
-    print('looping')
-    time.sleep(2)   
-    getTreeLocation()
+    #getTreeLocation()
+    autoPressG()
+    #print(pyautogui.position())
