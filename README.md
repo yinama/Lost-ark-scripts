@@ -1,2 +1,2 @@
 # Lost-ark-scripts
- Personal Use
+ This is meant for personal use, but feel free to download and modify
