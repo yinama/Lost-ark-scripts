@@ -30,7 +30,11 @@ Treecolor = (116, 203, 1)
 #                 time.sleep(4)
 #                 return
 
-options = ['1-auto press g','2-auto mine', '3-auto log']
+options = ['1-auto press g','2-auto mine', '3-auto log', '4-auto fish']
+
+#walks to a random location
+#def randomWalk():
+    
 
 #just press g
 def autoPressG():
@@ -39,7 +43,7 @@ def autoPressG():
         time.sleep(0.5)
 
 #new method with locateOnScreen
-def getOreLocation():
+def autoMine():
     pos = pyautogui.locateOnScreen('copper_ore.png',confidence=0.5)
     print(pos)
     pyautogui.moveTo(pos[0]+40, pos[1]+50)
@@ -50,7 +54,7 @@ def getOreLocation():
     time.sleep(4)
     return
 
-def getTreeLocation():
+def autoLog():
     pos = pyautogui.locateOnScreen('giant_mushroom.png',confidence=0.5)
     print(pos)
     
@@ -72,6 +76,19 @@ def getTreeLocation():
     else:
         return
         
+def autoFish():
+    pyautogui.press('e')
+    while True:
+        pos = pyautogui.locateOnScreen('fish_mark.png',confidence=0.80)
+        if pos:
+            print('in if')
+            pyautogui.press('e')
+            time.sleep(6)
+            pyautogui.press('e')
+        else:
+            print('in else')
+            time.sleep(0.2)
+            
     
 def getPosition():
     im = pyautogui.screenshot()
@@ -81,17 +98,17 @@ def getPosition():
         print(im.getpixel(position))
         time.sleep(0.1)
         
+        
 # getPosition()
-
-choice = input(options)
+print(options)
+choice = input()
 time.sleep(2)
 match (choice):
-    case 1 :
+    case '1' :
         autoPressG()
-    case 2 :
-        getOreLocation()
-    case 3 :
-        getTreeLocation()
-    #getTreeLocation()
-    #autoPressG()
-    #print(pyautogui.position())
+    case '2' :
+        autoMine()
+    case '3' :
+        autoLog()
+    case '4':
+        autoFish()
