@@ -6,30 +6,6 @@ import os
 Orecolor = (109, 191, 1)
 Treecolor = (116, 203, 1)
 
-#topleft(753, 434)
-
-# ore_pos = pyautogui.locateOnScreen("test.png")
-# posXY = pyautogui.position() 
-# print(posXY, pyautogui.pixel(posXY[0], posXY[1]) )
-
-# Doesn't work so well, using getpixel
-# def findGather ():
-#     s = pyautogui.screenshot()
-#     for x in range(s.width):
-#         for y in range(s.height):
-#             #if s.getpixel((x, y)) == Treecolor:
-#             #if pyautogui.pixelMatchesColor(x, y, Treecolor, tolerance=10):
-#                 print('found it')
-#                 print(x)
-#                 print(y)
-#                 pyautogui.moveTo(x+40, y+50)  # do something here
-#                 time.sleep(0.5)
-#                 pyautogui.leftClick()
-#                 time.sleep(5)
-#                 pyautogui.press('g')
-#                 time.sleep(4)
-#                 return
-
 options = ['1-auto press g','2-auto mine', '3-auto log', '4-auto fish']
 
 #walks to a random location
@@ -44,15 +20,17 @@ def autoPressG():
 
 #new method with locateOnScreen
 def autoMine():
-    pos = pyautogui.locateOnScreen('copper_ore.png',confidence=0.5)
-    print(pos)
-    pyautogui.moveTo(pos[0]+40, pos[1]+50)
-    time.sleep(0.5)
-    pyautogui.leftClick()
-    time.sleep(5)
-    pyautogui.press('g')
-    time.sleep(4)
-    return
+    while True:
+        pos = pyautogui.locateOnScreen('copper_ore.png',confidence=0.5)
+        if pos:
+            pyautogui.moveTo(pos[0]+40, pos[1]+50)
+            time.sleep(0.5)
+            pyautogui.leftClick()
+            time.sleep(5)
+            pyautogui.press('g')
+            time.sleep(4)
+        else:
+            time.sleep(0.5)
 
 def autoLog():
     pos = pyautogui.locateOnScreen('giant_mushroom.png',confidence=0.5)
@@ -81,12 +59,10 @@ def autoFish():
     while True:
         pos = pyautogui.locateOnScreen('fish_mark.png',confidence=0.80)
         if pos:
-            print('in if')
             pyautogui.press('e')
             time.sleep(6)
             pyautogui.press('e')
         else:
-            print('in else')
             time.sleep(0.2)
             
     
@@ -98,7 +74,16 @@ def getPosition():
         print(im.getpixel(position))
         time.sleep(0.1)
         
-        
+def testdo():
+    pyautogui.moveTo(90, 110)
+    pyautogui.mouseDown()
+    time.sleep(3)
+    pyautogui.mouseUp()
+    time.sleep(1)
+    pyautogui.press('g')
+    return
+
+#(90, 110, 53) (58, 56, 28)
 # getPosition()
 print(options)
 choice = input()
@@ -112,3 +97,7 @@ match (choice):
         autoLog()
     case '4':
         autoFish()
+    case '5':
+        getPosition()
+    case '6':
+        testdo()
