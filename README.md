@@ -1,5 +1,15 @@
 # Lost-ark-scripts
  This is meant for personal use, but feel free to download and modify
+
+## Prerequisites<br>
+
+<h3>
+- python 3.10<br>
+- pyautogui<br>
+- opencv2<br>
+</h3>
+<br><br>
+
 ## How to use<br><br>
 
 ### 1. Auto press G
