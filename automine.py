@@ -32,8 +32,8 @@ def autoMine():
         else: time.sleep(0.5)
 
 def autoLog():
-    counter = 2
-    direction = [[666,631],[1275,412]]
+    counter = 0
+    direction = [[1275,412],[666,631]]
     
     
     while True:
@@ -45,8 +45,9 @@ def autoLog():
             pyautogui.leftClick()
             time.sleep(1)
             pyautogui.press('g')
+            time.sleep(2)
             while True:
-                time.sleep(2)
+                time.sleep(5)
                 pos = pyautogui.locateOnScreen('images/gathering.png',confidence=0.99)
                 if pos:
                     print('logging')
@@ -61,7 +62,7 @@ def autoLog():
             time.sleep(0.5)
             
 def walkToNextTree(direction):
-    pyautogui.moveTo(direction[0], 412)
+    pyautogui.moveTo(direction[0], direction[1])
     pyautogui.mouseDown()
     time.sleep(2.3)
     pyautogui.mouseUp()
