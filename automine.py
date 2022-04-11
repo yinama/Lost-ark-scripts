@@ -21,7 +21,7 @@ def autoPressG():
 #new method with locateOnScreen
 def autoMine():
     while True:
-        pos = pyautogui.locateOnScreen('copper_ore.png',confidence=0.5)
+        pos = pyautogui.locateOnScreen('images/copper_ore.png',confidence=0.5)
         if pos:
             pyautogui.moveTo(pos[0]+40, pos[1]+50)
             time.sleep(0.5)
@@ -37,7 +37,7 @@ def autoLog():
     
     
     while True:
-        pos = pyautogui.locateOnScreen('giant_mushroom.png',confidence=0.5)
+        pos = pyautogui.locateOnScreen('images/giant_mushroom.png',confidence=0.5)
         print(pos)
         if pos:
             pyautogui.moveTo(pos[0]+40, pos[1]+50)
@@ -47,7 +47,7 @@ def autoLog():
             pyautogui.press('g')
             while True:
                 time.sleep(2)
-                pos = pyautogui.locateOnScreen('gathering.png',confidence=0.99)
+                pos = pyautogui.locateOnScreen('images/gathering.png',confidence=0.99)
                 if pos:
                     print('logging')
                 else:
@@ -71,7 +71,7 @@ def walkToNextTree(direction):
 def autoFish():
     pyautogui.press('e')
     while True:
-        pos = pyautogui.locateOnScreen('fish_mark.png',confidence=0.80)
+        pos = pyautogui.locateOnScreen('images/fish_mark.png',confidence=0.80)
         if pos:
             pyautogui.press('e')
             time.sleep(6)
