@@ -29,8 +29,7 @@ def autoMine():
             time.sleep(5)
             pyautogui.press('g')
             time.sleep(4)
-        else:
-            time.sleep(0.5)
+        else: time.sleep(0.5)
 
 def autoLog():
     pos = pyautogui.locateOnScreen('giant_mushroom.png',confidence=0.5)
@@ -70,20 +69,20 @@ def getPosition():
     im = pyautogui.screenshot()
     
     while True:
-        position = pyautogui.position()
-        print(im.getpixel(position))
+        print(pyautogui.position())
         time.sleep(0.1)
         
 def testdo():
-    pyautogui.moveTo(90, 110)
+    pyautogui.moveTo(1275, 412)
     pyautogui.mouseDown()
-    time.sleep(3)
+    time.sleep(2.3)
     pyautogui.mouseUp()
     time.sleep(1)
     pyautogui.press('g')
     return
 
-#(90, 110, 53) (58, 56, 28)
+#Point(x=666, y=631
+#Point(x=1275, y=412)
 # getPosition()
 print(options)
 choice = input()
