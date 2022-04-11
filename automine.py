@@ -32,26 +32,41 @@ def autoMine():
         else: time.sleep(0.5)
 
 def autoLog():
-    pos = pyautogui.locateOnScreen('giant_mushroom.png',confidence=0.5)
-    print(pos)
+    counter = 2
+    direction = [[666,631],[1275,412]]
     
-    if pos:
-        pyautogui.moveTo(pos[0]+40, pos[1]+50)
-        time.sleep(0.5)
-        pyautogui.leftClick()
-        time.sleep(1)
-        pyautogui.press('g')
-        while True:
-            time.sleep(2)
-            pos = pyautogui.locateOnScreen('gathering.png',confidence=0.99)
-            if pos:
-                print(pos)
-                print('logging')
-            else:
-                print('done logging')
-                return
-    else:
-        return
+    
+    while True:
+        pos = pyautogui.locateOnScreen('giant_mushroom.png',confidence=0.5)
+        print(pos)
+        if pos:
+            pyautogui.moveTo(pos[0]+40, pos[1]+50)
+            time.sleep(0.5)
+            pyautogui.leftClick()
+            time.sleep(1)
+            pyautogui.press('g')
+            while True:
+                time.sleep(2)
+                pos = pyautogui.locateOnScreen('gathering.png',confidence=0.99)
+                if pos:
+                    print('logging')
+                else:
+                    print('done logging')
+                    walkToNextTree(direction[counter%2])
+                    counter = counter + 1
+                    break
+        else:
+            walkToNextTree(direction[counter%2])
+            counter = counter + 1
+            time.sleep(0.5)
+            
+def walkToNextTree(direction):
+    pyautogui.moveTo(direction[0], 412)
+    pyautogui.mouseDown()
+    time.sleep(2.3)
+    pyautogui.mouseUp()
+    time.sleep(1)
+    return
         
 def autoFish():
     pyautogui.press('e')
@@ -81,7 +96,7 @@ def testdo():
     pyautogui.press('g')
     return
 
-#Point(x=666, y=631
+#Point(x=666, y=631)
 #Point(x=1275, y=412)
 # getPosition()
 print(options)

@@ -12,7 +12,7 @@ Works in Meteora, will find and mine everything within the screen
 
 ### 3. Auto Log
 
-Doesn't work so well yet, intended for Giant Mushroom Island
+Doesn't work so well yet, intended for Giant Mushroom Island.  Go on to the island, go a little bit left and then down.  Go near the tree at bottom left and run the command(not tested yet)
 
 ### 4. Auto Fish
 
