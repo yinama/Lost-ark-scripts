@@ -100,19 +100,19 @@ def testdo():
 #Point(x=666, y=631)
 #Point(x=1275, y=412)
 # getPosition()
-print(options)
-choice = input()
+# print(options)
+# choice = input()
 time.sleep(2)
-match (choice):
-    case '1' :
-        autoPressG()
-    case '2' :
-        autoMine()
-    case '3' :
-        autoLog()
-    case '4':
-        autoFish()
-    case '5':
-        getPosition()
-    case '6':
-        testdo()
+# match (choice):
+#     case '1' :
+#         autoPressG()
+#     case '2' :
+#         autoMine()
+#     case '3' :
+#         autoLog()
+#     case '4':
+#         autoFish()
+#     case '5':
+#         getPosition()
+#     case '6':
+#         testdo()
