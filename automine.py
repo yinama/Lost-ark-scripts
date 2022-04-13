@@ -70,6 +70,7 @@ def walkToNextTree(direction):
     return
         
 def autoFish():
+    print('in here')
     pyautogui.press('e')
     while True:
         pos = pyautogui.locateOnScreen('images/fish_mark.png',confidence=0.80)
@@ -77,7 +78,7 @@ def autoFish():
             pyautogui.press('e')
             time.sleep(6)
             pyautogui.press('e')
-        else:
+        else:   
             time.sleep(0.2)
             
     
@@ -102,7 +103,7 @@ def testdo():
 # getPosition()
 # print(options)
 # choice = input()
-time.sleep(2)
+# time.sleep(2)
 # match (choice):
 #     case '1' :
 #         autoPressG()
