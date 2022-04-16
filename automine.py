@@ -35,7 +35,6 @@ def autoLog():
     counter = 0
     direction = [[1275,412],[666,631]]
     
-    
     while True:
         pos = pyautogui.locateOnScreen('images/giant_mushroom.png',confidence=0.5)
         print(pos)
@@ -70,7 +69,6 @@ def walkToNextTree(direction):
     return
         
 def autoFish():
-    print('in here')
     pyautogui.press('e')
     while True:
         pos = pyautogui.locateOnScreen('images/fish_mark.png',confidence=0.80)
@@ -81,6 +79,12 @@ def autoFish():
         else:   
             time.sleep(0.2)
             
+def autoPlaySheetMusic():
+    while True:
+        pos = pyautogui.locateOnScreen('images/play.png',confidence=0.80)
+        pyautogui.moveTo(pos)
+        pyautogui.leftClick()
+        time.sleep(13)
     
 def getPosition():
     im = pyautogui.screenshot()

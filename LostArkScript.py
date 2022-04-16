@@ -2,12 +2,13 @@ import PySimpleGUI as sg
 import time
 
 from cv2 import DrawMatchesFlags_DRAW_RICH_KEYPOINTS         
-from automine import autoPressG,autoMine,autoLog,autoFish
+from automine import autoPressG,autoMine,autoLog,autoFish,autoPlaySheetMusic
 
 layout = [[sg.Button('Auto Press G',size=(12,2))],
           [sg.Button('Auto Mine', size=(12,2))],
           [sg.Button('Auto Logging', size=(12,2))],
           [sg.Button('Auto Fishing', size=(12,2))],
+          [sg.Button('Auto Play Sheet Music', size=(12,2))],
           [sg.Button('Stop', size=(12,2))]]
 
 window = sg.Window('Lost Ark Script', layout,size=(600, 400)) 
@@ -26,3 +27,5 @@ while True:
             autoLog()
         elif event == 'Auto Fishing':
             autoFish()
+        elif event == 'Auto Play Sheet Music':
+            autoPlaySheetMusic()
