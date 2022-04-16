@@ -5,7 +5,7 @@
 
 <h3>
 - python 3.10<br>
-- pyautogui<br>
+- pysimplegui<br>
 - opencv2<br>
 </h3>
 <br><br>
@@ -22,7 +22,7 @@ Works in Meteora, will find and mine everything within the screen
 
 ### 3. Auto Log
 
-Doesn't work so well yet, intended for Giant Mushroom Island.  Go on to the island, go a little bit left and then down.  Go near the tree at bottom left and run the command(not tested yet)
+Doesn't work so well yet, intended for Giant Mushroom Island.  Go on to the island, go a little bit left and then down.  Go near the tree at bottom left and run the command
 
 ### 4. Auto Fish
 
