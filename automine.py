@@ -84,7 +84,7 @@ def autoPlaySheetMusic():
         pos = pyautogui.locateOnScreen('images/play.png',confidence=0.80)
         pyautogui.moveTo(pos)
         pyautogui.leftClick()
-        time.sleep(13)
+        time.sleep(16)
     
 def getPosition():
     im = pyautogui.screenshot()
