@@ -141,5 +141,3 @@ def testdo():
 #         getPosition()
 #     case '6':
 #         testdo()
-time.sleep(0.5)
-autoRepairTradeTool()
