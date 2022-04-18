@@ -85,6 +85,26 @@ def autoPlaySheetMusic():
         pyautogui.moveTo(pos)
         pyautogui.leftClick()
         time.sleep(17)
+        
+def autoRepairTradeTool():
+    pyautogui.moveTo(pyautogui.locateOnScreen('images/guide.png',confidence=0.50))
+    pyautogui.leftClick()
+    time.sleep(0.5)
+    pyautogui.moveTo(pyautogui.locateOnScreen('images/pets.png',confidence=0.80))
+    pyautogui.leftClick()
+    time.sleep(0.5)
+    pyautogui.moveTo(pyautogui.locateOnScreen('images/remote_repair.png',confidence=0.90))
+    pyautogui.leftClick()
+    time.sleep(0.5)
+    pyautogui.moveTo(pyautogui.locateOnScreen('images/repair_all.png',confidence=0.90))
+    pyautogui.leftClick()
+    time.sleep(0.5)
+    pyautogui.moveTo(pyautogui.locateOnScreen('images/ok.png',confidence=0.90))
+    pyautogui.leftClick()
+    time.sleep(3)
+    pyautogui.press('esc')
+    pyautogui.press('esc')
+    time.sleep(0.5)
     
 def getPosition():
     im = pyautogui.screenshot()
@@ -121,3 +141,5 @@ def testdo():
 #         getPosition()
 #     case '6':
 #         testdo()
+time.sleep(0.5)
+autoRepairTradeTool()
