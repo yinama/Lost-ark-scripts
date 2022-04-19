@@ -71,7 +71,7 @@ def walkToNextTree(direction):
 def autoFish():
     pyautogui.press('e')
     while True:
-        pos = pyautogui.locateOnScreen('images/fish_mark.png',confidence=0.80)
+        pos = pyautogui.locateOnScreen('images/fish_mark.png',confidence=0.50)
         if pos:
             pyautogui.press('e')
             time.sleep(6)
@@ -84,7 +84,7 @@ def autoPlaySheetMusic():
         pos = pyautogui.locateOnScreen('images/play.png',confidence=0.80)
         pyautogui.moveTo(pos)
         pyautogui.leftClick()
-        time.sleep(17)
+        time.sleep(20)
         
 def autoRepairTradeTool():
     pyautogui.moveTo(pyautogui.locateOnScreen('images/guide.png',confidence=0.50))
