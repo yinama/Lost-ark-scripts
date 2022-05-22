@@ -34,6 +34,7 @@ def autoMine():
 def autoLog():
     counter = 0
     direction = [[1275,412],[666,631]]
+    duration = [2.0, 2.1]
     
     while True:
         pos = pyautogui.locateOnScreen('images/giant_mushroom.png',confidence=0.5)
@@ -52,31 +53,40 @@ def autoLog():
                     print('logging')
                 else:
                     print('done logging')
-                    walkToNextTree(direction[counter%2])
+                    walkToNextTree(direction[counter%2], duration[counter%2])
                     counter = counter + 1
                     break
         else:
-            walkToNextTree(direction[counter%2])
+            walkToNextTree(direction[counter%2], duration[counter%2])
             counter = counter + 1
             time.sleep(0.5)
             
-def walkToNextTree(direction):
+def walkToNextTree(direction, duration):
+    time.sleep(2)
     pyautogui.moveTo(direction[0], direction[1])
     pyautogui.mouseDown()
-    time.sleep(2.3)
+    print(duration)
+    time.sleep(duration)
     pyautogui.mouseUp()
     time.sleep(1)
     return
         
 def autoFish():
+    timer = 0
     pyautogui.press('e')
     while True:
-        pos = pyautogui.locateOnScreen('images/fish_mark.png',confidence=0.50)
+        pos = pyautogui.locateOnScreen('images/fish_mark.png',confidence=0.75)
         if pos:
+            print('found fish mark')
             pyautogui.press('e')
-            time.sleep(6)
+            print('pull fishing rod')
+            time.sleep(8)
+            print('fishing again')
             pyautogui.press('e')
-        else:   
+        elif timer > 200:   
+            pyautogui.press('e')
+            timer = 0
+        else:
             time.sleep(0.2)
             
 def autoPlaySheetMusic():
